@@ -1,24 +1,29 @@
-# README
+# Ruby on Rails sample application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+这是一个简单的微博类应用程序
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
+使用下面的命令安装程序所需的依赖包
 
-* System dependencies
+```
+$ bundle install --without production
+```
 
-* Configuration
+接下来，将模型映射到数据库
 
-* Database creation
+```
+$ rails db:migrate
+```
 
-* Database initialization
+最后，测试一下它能否正常运行
 
-* How to run the test suite
+```
+$ rails test
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+如果测试通过，那么说明现在可以在本地正常运行了
 
-* Deployment instructions
-
-* ...
+```
+$ rails server
+```
