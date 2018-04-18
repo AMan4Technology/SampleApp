@@ -1,5 +1,5 @@
 module UsersHelper
-  # @!method 返回指定用户的Gravatar
+  # 返回指定用户的Gravatar
   # @param user 需要展示的user对象
   # @param size 展示的图片大小，默认为80
   def gravatar_for(user, size: 80)

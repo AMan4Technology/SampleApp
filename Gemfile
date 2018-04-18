@@ -10,6 +10,8 @@ end
 gem 'rails', '~> 5.1.4'
 # bcrypt
 gem 'bcrypt', '3.1.11'
+# JQuery
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.3.7'
 # Use sqlite3 as the database for Active Record
