@@ -25,6 +25,7 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = ' ' * 6
     assert_not @user.valid?
   end
+
   # length
   test 'name should not be too long' do
     @user.name = 'a' * 51
@@ -38,6 +39,7 @@ class UserTest < ActiveSupport::TestCase
     @user.password = @user.password_confirmation = 'a' * 5
     assert_not @user.valid?
   end
+
   # regular
   test 'email validation should accept valid address' do
     valid_addresses = %w[user@example.com USER@foo.COM
@@ -57,6 +59,7 @@ class UserTest < ActiveSupport::TestCase
       assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
+
   # unique
   test 'email address should be unique' do
     duplicate_user       = @user.dup
@@ -64,10 +67,16 @@ class UserTest < ActiveSupport::TestCase
     @user.save
     assert_not duplicate_user.valid?
   end
+
   test 'email address should be saved as lower-case' do
     mixed_case_email = 'Foo@ExAMPle.com'
     @user.email      = mixed_case_email
     @user.save
     assert_equal mixed_case_email.downcase, @user.reload.email
+  end
+
+  # 当remember_digest不存在时，匹配失败
+  test 'authenticated? should return false for a user with nil digest' do
+    assert_not @user.authenticated? ''
   end
 end
