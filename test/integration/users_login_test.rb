@@ -15,7 +15,7 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     assert flash.empty?
   end
 
-  test 'login with valid information followed by  logout' do
+  test 'login with valid information followed by logout' do
     get login_path
     log_in_as user: @user, remember_me: '0'
     assert is_logged_in?

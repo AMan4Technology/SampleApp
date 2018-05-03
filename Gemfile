@@ -9,11 +9,16 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # bcrypt
-gem 'bcrypt', '3.1.11'
+gem 'bcrypt', '~> 3.1'
+# faker 用于生成用户数据
+gem 'faker', '~> 1.8'
+# 分页用
+gem 'will_paginate', '~> 3.1'
+gem 'bootstrap-will_paginate', '~> 1.0'
 # JQuery
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 # Bootstrap
-gem 'bootstrap-sass', '~> 3.3.7'
+gem 'bootstrap-sass', '~> 3.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server

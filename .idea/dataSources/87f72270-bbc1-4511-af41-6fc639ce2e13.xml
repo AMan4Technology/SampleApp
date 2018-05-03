@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="development.sqlite3">
-  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.7">
-    <root id="1"/>
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.8">
+    <root id="1">
+      <ServerVersion>3.16.1</ServerVersion>
+    </root>
     <schema id="2" parent="1" name="main">
       <Current>1</Current>
       <Visible>1</Visible>
@@ -118,12 +120,21 @@
       <Position>6</Position>
       <DataType>varchar|0s</DataType>
     </column>
-    <index id="33" parent="10" name="index_users_on_email">
+    <column id="33" parent="10" name="remember_digest">
+      <Position>7</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="34" parent="10" name="admin">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <DefaultExpression>&apos;f&apos;</DefaultExpression>
+    </column>
+    <index id="35" parent="10" name="index_users_on_email">
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="34" parent="10">
+    <key id="36" parent="10">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>

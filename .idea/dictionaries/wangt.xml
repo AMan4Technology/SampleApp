@@ -4,8 +4,10 @@
       <w>dropdown</w>
       <w>gravatar</w>
       <w>navbar</w>
+      <w>railstutorial</w>
       <w>signup</w>
       <w>turbolinks</w>
+      <w>webserver</w>
     </words>
   </dictionary>
 </component>
