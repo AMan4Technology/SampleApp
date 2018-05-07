@@ -60,7 +60,18 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "SampleApp_#{Rails.env}"
-  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_caching       = false
+  config.action_mailer.raise_delivery_errors = true
+  host                                       = '<your heroku app>.herokuapp.com'
+  config.action_mailer.default_url_options   = {
+      address:              'smtp.sendgrid.net',
+      port:                 '587',
+      authentication:       :plain,
+      user_name:            ENV['SENDGRID_USERNAME'],
+      password:             ENV['SENDGRID_PASSWORD'],
+      domain:               'heroku.com',
+      enable_starttls_auto: true
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

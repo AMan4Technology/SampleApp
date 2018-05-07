@@ -77,6 +77,6 @@ class UserTest < ActiveSupport::TestCase
 
   # 当remember_digest不存在时，匹配失败
   test 'authenticated? should return false for a user with nil digest' do
-    assert_not @user.authenticated? ''
+    assert_not @user.authenticated? :remember, ''
   end
 end

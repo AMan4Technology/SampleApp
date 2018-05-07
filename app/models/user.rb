@@ -1,6 +1,7 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token
-  before_save { self.email = email.downcase }
+  attr_accessor :remember_token, :activation_token
+  before_create :create_activation_digest
+  before_save :downcase_email
   validates :name,
             presence: true,
             length:   {maximum: 50}
@@ -37,12 +38,36 @@ class User < ApplicationRecord
 
   # 判断指定的令牌和摘要是否匹配
   # @return 匹配则返回true
-  def authenticated?(remember_token)
-    BCrypt::Password.new(remember_digest).is_password? remember_token unless remember_digest.nil?
+  def authenticated?(attribute, token)
+    digest = send "#{attribute}_digest"
+    BCrypt::Password.new(digest).is_password? token unless digest.nil?
   end
 
   # 忘记用户
   def forget
     update_attribute :remember_digest, nil
   end
+
+  # 发送激活邮件
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
+  end
+
+  # 激活用户
+  def activate
+    update_columns activated: true, activated_at: Time.zone.now
+  end
+
+  private
+
+    def downcase_email
+      # self.email = email.downcase
+      email.downcase!
+    end
+
+    def create_activation_digest
+      # 创建激活令牌和摘要
+      self.activation_token  = User.new_token
+      self.activation_digest = User.digest activation_token
+    end
 end

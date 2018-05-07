@@ -12,7 +12,7 @@ gem 'rails', '~> 5.1.4'
 gem 'bcrypt', '~> 3.1'
 # faker 用于生成用户数据
 gem 'faker', '~> 1.8'
-# 分页用
+# 分页
 gem 'will_paginate', '~> 3.1'
 gem 'bootstrap-will_paginate', '~> 1.0'
 # JQuery

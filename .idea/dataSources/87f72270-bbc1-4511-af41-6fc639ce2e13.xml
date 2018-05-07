@@ -129,12 +129,25 @@
       <DataType>boolean|0s</DataType>
       <DefaultExpression>&apos;f&apos;</DefaultExpression>
     </column>
-    <index id="35" parent="10" name="index_users_on_email">
+    <column id="35" parent="10" name="activation_digest">
+      <Position>9</Position>
+      <DataType>varchar|0s</DataType>
+    </column>
+    <column id="36" parent="10" name="activated">
+      <Position>10</Position>
+      <DataType>boolean|0s</DataType>
+      <DefaultExpression>&apos;f&apos;</DefaultExpression>
+    </column>
+    <column id="37" parent="10" name="activated_at">
+      <Position>11</Position>
+      <DataType>datetime|0s</DataType>
+    </column>
+    <index id="38" parent="10" name="index_users_on_email">
       <ColNames>email</ColNames>
       <ColumnCollations></ColumnCollations>
       <Unique>1</Unique>
     </index>
-    <key id="36" parent="10">
+    <key id="39" parent="10">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
