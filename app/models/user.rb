@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
   before_create :create_activation_digest
   before_save :downcase_email
   validates :name,
@@ -58,6 +58,17 @@ class User < ApplicationRecord
     update_columns activated: true, activated_at: Time.zone.now
   end
 
+  # 发送重置密码邮件
+  def send_password_reset_email
+    create_reset_digest
+    UserMailer.password_reset(self).deliver_now
+  end
+
+  # 如果密码重置请求超时了，返回true
+  def password_reset_expired?
+    reset_sent_at < 2.hours.ago
+  end
+
   private
 
     def downcase_email
@@ -65,9 +76,16 @@ class User < ApplicationRecord
       email.downcase!
     end
 
+  # 创建激活令牌和摘要
     def create_activation_digest
-      # 创建激活令牌和摘要
       self.activation_token  = User.new_token
       self.activation_digest = User.digest activation_token
+    end
+
+  # 创建重置密码令牌和摘要
+    def create_reset_digest
+      self.reset_token = User.new_token
+      update_columns reset_digest:  User.digest(reset_token),
+                     reset_sent_at: Time.zone.now
     end
 end
