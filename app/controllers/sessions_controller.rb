@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :check_user_activated, only: [:create]
+  before_action :check_user_activated, only: %i[create]
 
   def new
   end

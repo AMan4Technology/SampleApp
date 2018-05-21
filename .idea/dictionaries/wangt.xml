@@ -1,12 +1,18 @@
 <component name="ProjectDictionaryState">
   <dictionary name="wangt">
     <words>
+      <w>bcrypt</w>
+      <w>byebug</w>
+      <w>carrierwave</w>
       <w>dropdown</w>
       <w>foobaz</w>
       <w>gravatar</w>
       <w>heroku</w>
       <w>herokuapp</w>
+      <w>ipsum</w>
       <w>jbuilder</w>
+      <w>jumbotron</w>
+      <w>lorem</w>
       <w>minitest</w>
       <w>navbar</w>
       <w>railstutorial</w>
@@ -15,8 +21,10 @@
       <w>syslog</w>
       <w>turbolinks</w>
       <w>uglifier</w>
+      <w>uneditable</w>
       <w>wangting</w>
       <w>webserver</w>
+      <w>zoneinfo</w>
     </words>
   </dictionary>
 </component>

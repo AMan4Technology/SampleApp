@@ -16,7 +16,7 @@ User.create! name:                  'AMan',
 
 99.times do |i|
   name     = Faker::Name.name
-  email    = "example-#{i + 2}@railstutorial.org"
+  email    = "example-#{i + 1}@railstutorial.org"
   password = 'password'
   User.create! name:                  name,
                email:                 email,
@@ -24,4 +24,10 @@ User.create! name:                  'AMan',
                password_confirmation: password,
                activated:             true,
                activated_at:          Time.zone.now
+end
+
+users = User.order(:created_at).take 6
+50.times do
+  content = Faker::Lorem.sentence 5
+  users.each { |user| user.microposts.create! content: content }
 end
