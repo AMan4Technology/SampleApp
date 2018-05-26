@@ -5,6 +5,7 @@
       <w>byebug</w>
       <w>carrierwave</w>
       <w>dropdown</w>
+      <w>followeds</w>
       <w>foobaz</w>
       <w>gravatar</w>
       <w>heroku</w>
@@ -22,6 +23,8 @@
       <w>turbolinks</w>
       <w>uglifier</w>
       <w>uneditable</w>
+      <w>unfollow</w>
+      <w>unfollowed</w>
       <w>wangting</w>
       <w>webserver</w>
       <w>zoneinfo</w>

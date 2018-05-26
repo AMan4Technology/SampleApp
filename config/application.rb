@@ -27,5 +27,7 @@ module SampleApp
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    # 在使用Ajax处理的表单中添加真伪令牌
+    config.action_view.embed_authenticity_token_in_remote_forms = true
   end
 end

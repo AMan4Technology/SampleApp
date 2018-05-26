@@ -12,8 +12,18 @@ Rails.application.routes.draw do
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
-  resources :users
+  resources :users do
+    # 添加带user_id的具名路由：/users/id/following
+    member do
+      get :following, :followers
+    end
+    # 添加不带user_id的具名路由：/users/tigers
+    # collection do
+    #   get :tigers
+    # end
+  end
   resources :account_activations, only: %i[edit]
   resources :password_resets, only: %i[new create edit update]
   resources :microposts, only: %i[create destroy]
+  resources :relationships, only: %i[create destroy]
 end
