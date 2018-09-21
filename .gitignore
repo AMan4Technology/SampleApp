@@ -27,11 +27,4 @@
 
 # 忽略上传的测试图像
 /public/uploads
-.idea/workspace.xml
-.idea/dataSources.local.xml
-.idea/dataSources/14dc3fa4-931e-40df-ade9-3b6d35552453.xml
-.idea/dataSources/14dc3fa4-931e-40df-ade9-3b6d35552453/
-.idea/dataSources/c432e2e5-8156-4f7c-b4dc-98fc7998e79e.xml
-.idea/dataSources/c432e2e5-8156-4f7c-b4dc-98fc7998e79e/
-.idea/dataSources/f0f45373-f0b1-4bc8-833c-3217918679a4.xml
-.idea/dataSources/f0f45373-f0b1-4bc8-833c-3217918679a4/
+.idea
