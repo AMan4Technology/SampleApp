@@ -13,7 +13,7 @@ gem 'bcrypt', '~> 3.1'
 # faker 用于生成用户数据
 gem 'faker', '~> 1.8'
 # 图像上传
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', '~> 1.3'
 gem 'mini_magick', '~> 4.7'
 # 分页
 gem 'bootstrap-will_paginate', '~> 1.0'
